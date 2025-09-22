@@ -71,7 +71,7 @@ resource "aws_instance" "test_server" {
   instance_type = "t2.micro"
   subnet_id = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.test_server_sg.id]
-  key_name = "EKS_Admin"
+  key_name = "AWS2DefaultKeypair"
   tags = {
     Name = "test_server-${count.index}"
     Source = "terraform"
