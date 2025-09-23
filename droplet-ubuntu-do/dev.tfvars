@@ -1,0 +1,6 @@
+env = "dev"
+ssh_key = "do-test"
+domain_name = "example.com"
+record_name = "test"
+region = "fra1"
+droplet_name = "do-test"
