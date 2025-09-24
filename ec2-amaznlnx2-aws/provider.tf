@@ -14,5 +14,5 @@ provider "aws" {
 }
 
 terraform {
-  backend "http" {}
+  backend "local" {}
 }
