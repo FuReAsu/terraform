@@ -65,8 +65,17 @@ resource "aws_vpc_security_group_ingress_rule" "test_server_web_access" {
   ip_protocol = "tcp"
 }
 
+resource "aws_vpc_security_group_ingress_rule" "test_server_web_access_tls" {
+  security_group_id = aws_security_group.test_server_sg.id
+
+  cidr_ipv4 = "0.0.0.0/0"
+  from_port =  0
+  to_port = 443
+  ip_protocol = "tcp"
+}
+
 resource "aws_instance" "test_server" {
-  count = 3
+  count = 1
   ami = data.aws_ssm_parameter.amazon_linux_2.value
   instance_type = "t2.micro"
   subnet_id = aws_subnet.public.id
