@@ -16,11 +16,3 @@ variable "instance_name" {
   default  = "compute-instance"
   description = "Name of the compute instance"
 }
-
-variable "gl_user" {
-  type = string
-}
-
-variable "gl_pat" {
-  type = string
-}
